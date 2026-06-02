@@ -23,23 +23,36 @@ Cette application est une petite application web <span title="qui ne s'exécute 
 * Le script agrège ensuite les résultats en inventaire, enrichit chaque classe grâce au fichier JSON d'enrichissement sémantique 'semantic.json', puis affiche l’inventaire dans la page.
 * Finalement, l'application génère une phrase de synthèse en français (ex. « J’ai détecté 2 personnes, 1 chien… »), l’affiche, et la lit à voix haute via l’API Web Speech (speechSynthesis).
 
-## Flux d’architecture (haut niveau) :
+## Flux d’architecture :
 
-    Interface utilisateur (UI) : Téléversement image → aperçu
-    Chargements : chargerModele() (COCO-SSD) + chargerSemantic() (fetch JSON)
-    Action : clic Analyser → detecterObjets() → model.detect(image)
-    Traitement : genererInventaire() → enrichirObjet() → genererPhrase()
-    Sorties : afficherInventaire() + texte + lirePhrase() (synthèse vocale)
+* **Interface utilisateur (UI) :** Téléversement image → aperçu
+* **Chargements :** chargerModele() (COCO-SSD) + chargerSemantic() (fetch JSON)
+* **Action :** clic Analyser → detecterObjets() → model.detect(image)
+* **Traitement :** genererInventaire() → enrichirObjet() → genererPhrase()
+* **Sorties :** afficherInventaire() + texte + lirePhrase() (synthèse vocale)
 
 ## Dépendances clés à l’exécution :
 
-    COCO-SSD (chargement + inférence) dans le navigateur
-    fetch("semantic.json") (asset statique)
-    DOM + Web Speech API (langue fr-FR)
+* COCO-SSD (chargement + inférence) dans le navigateur
+* fetch("semantic.json") (asset statique)
+* DOM + Web Speech API (langue fr-FR)
 
 # Structure des prédictions
 
-    La variable _Predictions_ est un tableau
+La variable _Predictions_ est un tableau qui contient l'ensemble des objets détectés :
+>
+>   ```Predictions: [
+>           0:{
+>               bbox: [4 valeurs de sommet de bounding box],
+>               class: "objet détecté",
+>               score: valeur réelle comprise entre 0 et 1
+>           },
+>           1:{
+>               ...
+>           }   
+>       ]```
+
+
 
 # Pipeline complet
 
