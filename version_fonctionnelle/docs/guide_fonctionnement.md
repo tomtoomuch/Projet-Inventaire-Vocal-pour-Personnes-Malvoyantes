@@ -1,7 +1,7 @@
 # GUIDE D'UTILISATION DE L'OUTIL DE DETECTION D'OBJETS DANS UNE IMAGE TELEVERSEE
 
 > Ce guide est destiné à l'équipe IT.
-> Il explique le fonctionnement de l'application en ligne de détection d'objets dans une immage téléversée.
+> Il explique le fonctionnement de l'application en ligne de détection d'objets dans une image téléversée.
 
 ## Table des matières
 
@@ -40,6 +40,8 @@ Cette application est une petite application web <span title="qui ne s'exécute 
 # Structure des prédictions
 
 La variable _Predictions_ est un tableau qui contient l'ensemble des objets détectés :
+>
+>
 >   ```Predictions: [
 >           0:{
 >               bbox: [4 valeurs de sommet de bounding box],
