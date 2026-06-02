@@ -4,14 +4,15 @@
 
 // Variables globales
 let model;
-let inventaire = {};
-let dictionnaire_JSON = {};
+// const inventaire = {};
+const dictionnaire_JSON = {};
 let quantite;
 let objet;
 let predictions = [];
 
 // Récupération des éléments du DOM
 const imageUpload = document.getElementById("imageUpload");
+const jsonUpload = document.getElementById("enrichissementJSON");
 const img = document.getElementById("img");
 const result = document.getElementById("result");
 
@@ -46,21 +47,21 @@ function dessinerImage(img){
 
 async function chargerEnrichissement() {
     // Chargement d'un JSON au clic du bouton
-    fetch("./inventaire_enrichi.json")
-        .then(async (response) => {
-            dictionnaire_JSON = await response.json();
-        })
-        .then(data => {
-            console.log("Données enrichies chargées:", data);
-            // Traiter les données enrichies
-            dictionnaire_JSON.forEach(classe => {
-                if (classe in inventaire) {
-                    console.log(`Classe ${classe} trouvée dans l'inventaire`);
-                }
-            });
-        })
-        .catch(error => console.error("Erreur lors du chargement des données enrichies:", error));
+    const file = jsonUpload.files[0];
+    const lecteur = new FileReader();
+    lecteur.onload = async (e) => {
+        dictionnaire_JSON = JSON.parse(e.target.result);
+        console.log("Données enrichies chargées:", dictionnaire_JSON);
+        // Traiter les données enrichies
+        dictionnaire_JSON.forEach(entree => {
+        for (entree in inventaire) {
+                console.log(`Classe ${entree} trouvée dans l'inventaire`);
+            }
+        });
+    };
+    //lecteur.readAsText(file);
 }
+    
 
 // Fonction enrichirObjet(class) {}
 
@@ -73,17 +74,22 @@ async function detectObjects() {
     
 function genererInventaire(predictions) {
     console.log("Génération de l'inventaire à partir des prédictions...");
+    
+    // console.log(inventaire);
     predictions.forEach (prediction => {
         console.log(`Détection d'un objet: ${prediction.class} avec une confiance de ${(prediction.score * 100).toFixed(2)}%`);
-        inventaire[prediction.class] = (inventaire[prediction.class] || 0) + 1;
-        console.log("Inventaire mis à jour :", inventaire);
-        for (let objet in inventaire) {
-            quantite = inventaire[objet];
-            console.log(`${objet} : ${quantite}`);
+        const inventaire = {
+            [prediction.class]: {
+                quantite: `${(inventaire[prediction.class] || 0) + 1}`,
+                bbox: prediction.bbox,
+                score: prediction.score
+            }
         };
+        console.log("Inventaire mis à jour :", inventaire);
     });
-    return inventaire, quantite;
-};
+    return inventaire;
+    };
+    
 
 function afficherInventaire(inventaire) {
     for (let objet in inventaire) {
@@ -113,5 +119,6 @@ function BoundingBoxes(predictions) {
 
 loadModel();
 imageUpload.addEventListener("change", chargerImage);
-inventaire = genererInventaire(predictions);
+jsonUpload.addEventListener("change", chargerEnrichissement);
+// genererInventaire(predictions);
 //afficherInventaire(inventaire);
