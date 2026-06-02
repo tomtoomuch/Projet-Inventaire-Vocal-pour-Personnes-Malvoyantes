@@ -19,31 +19,49 @@
 
   "cup": {
     "fr": "tasse",
-    "categorie": "objet du quotidien",
+    "categorie": "vaisselle",
     "definition": "Une tasse est un récipient utilisé pour boire une boisson."
   },
 
   "potted plant": {
     "fr": "plante en pot",
-    "categorie": "objet du quotidien",
+    "categorie": "décoration",
     "definition": "Une plante en pot est une plante cultivée dans un récipient."
   },
 
   "tv": {
     "fr": "télévision",
-    "categorie": "objet du quotidien",
+    "categorie": "objet électronique",
     "definition": "Une télévision est un appareil électronique permettant d'afficher des images qui bougent."
   },
 
   "couch": {
     "fr": "canapé",
-    "categorie": "Objet confortable pour s'asseoir ou s'allonger.",
-    "definition": "Une télévision est un appareil électronique permettant d'afficher des images qui bougent."
+    "categorie": "meuble",
+    "definition": "Un canapé est un meuble matelassé ou rembourré qui permet de s'asseoir ou s'allonger."
   },
 
   "keyboard": {
     "fr": "clavier",
-    "categorie": "objet du quotidien",
+    "categorie": "périphérique informatique",
     "definition": "Périphérique d'entrée pour les ordinateurs ou télévisions connectées."
+  },
+
+  "chair": {
+    "fr": "chaise",
+    "categorie": "meuble",
+    "definition": "Une télévision est un appareil électronique permettant d'afficher des images qui bougent."
+  },
+
+  "laptop": {
+    "fr": "ordinateur portable",
+    "categorie": "matériel informatique",
+    "definition": "Un micro-ordinateur est un outil informatique et multimédia."
+  },
+
+  "book": {
+    "fr": "livre",
+    "categorie": "objet du quotidien",
+    "definition": "Un livre est un objet qui nous vient du fond des âges et qui ne servira bientôt plus qu'à faire du feu."
   }
 }
