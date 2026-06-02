@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+ 
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Inventaire vocal pour personnes malvoyantes</h1>
+
+    <p>
+        Choisissez une image. L’application détecte les objets,
+        crée un inventaire et lit le résultat à voix haute.
+    </p>
+
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <br><br>
+
+    <img id="image" width="450">
+
+    <br><br>
+
+    <button id="analyserBtn">Analyser l’image</button>
+    <button id="lireBtn">Lire le résultat</button>
+
+    <h2>Inventaire détecté</h2>
+    <div id="inventaire"></div>
+
+    <h2>Description vocale</h2>
+    <p id="description"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

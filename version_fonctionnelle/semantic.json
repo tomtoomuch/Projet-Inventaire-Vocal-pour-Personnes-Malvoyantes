@@ -1,0 +1,49 @@
+{
+  "dog": {
+    "fr": "chien",
+    "categorie": "animal",
+    "definition": "Un chien est un animal domestique."
+  },
+
+  "person": {
+    "fr": "personne",
+    "categorie": "être humain",
+    "definition": "Une personne est un être humain ."
+  },
+
+  "car": {
+    "fr": "voiture",
+    "categorie": "transport",
+    "definition": "Une voiture est un véhicule utilisé pour se déplacer."
+  },
+
+  "cup": {
+    "fr": "tasse",
+    "categorie": "objet du quotidien",
+    "definition": "Une tasse est un récipient utilisé pour boire une boisson."
+  },
+
+  "potted plant": {
+    "fr": "plante en pot",
+    "categorie": "objet du quotidien",
+    "definition": "Une plante en pot est une plante cultivée dans un récipient."
+  },
+
+  "tv": {
+    "fr": "télévision",
+    "categorie": "objet du quotidien",
+    "definition": "Une télévision est un appareil électronique permettant d'afficher des images qui bougent."
+  },
+
+  "couch": {
+    "fr": "canapé",
+    "categorie": "Objet confortable pour s'asseoir ou s'allonger.",
+    "definition": "Une télévision est un appareil électronique permettant d'afficher des images qui bougent."
+  },
+
+  "keyboard": {
+    "fr": "clavier",
+    "categorie": "objet du quotidien",
+    "definition": "Périphérique d'entrée pour les ordinateurs ou télévisions connectées."
+  }
+}
