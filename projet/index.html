@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projet : Inventaire Vocal pour Personnes Malvoyantes</title>
+
+        <!-- Chargement de TensorFlow.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+        <!-- Chargement du modèle COCO-SSD -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+        <link rel="stylesheet" href="./style.css" type="text/css">
+    </head>
+
+    <body>
+
+        <h1>Projet : Inventaire Vocal pour Personnes Malvoyantes</h1>
+
+        <p>Choisissez une image </p>
+
+        <input type="file" id="imageUpload" accept="image/*" required>
+
+        <br><br>
+
+        <img src=""id="img" />
+        <canvas id="imageCanvas" width="800" height="600"></canvas>
+
+        <br><br>
+
+        <button onclick="detectObjects()">Détecter les objets</button>
+
+        <h2>Résultats :</h2>
+        <div id="result"></div>
+
+        <button onclick="chargerEnrichissement()">Enrichir les données</button>
+        
+        <br><br>
+
+        <button id="trigger" onclick="lirePhrase()">Lire les résultats</button>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
