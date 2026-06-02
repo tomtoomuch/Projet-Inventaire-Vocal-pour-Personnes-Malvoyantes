@@ -6,7 +6,7 @@
 ## Table des matières
 
 1. [Architecture du projet](#architecture-du-projet)
-2. [Structure des prédictions (JSON)](#structure-des-predictions)
+2. [Structure des prédictions](#structure-des-predictions)
 3. [Pipeline complet](#pipeline-complet)
 4. [Gestion du JSON sémantique](#gestion-json)
 5. [Pistes d'améliorations techniques](#pistes-ameliorations-techniques)
@@ -61,9 +61,9 @@ La variable _Predictions_ est un tableau qui contient l'ensemble des objets dét
 Le fichier JSON structuré de la manière suivante :
 >```{
 >   "dog": {                                                **-> On retrouve le champ "class" de nos dictionnaires d'objets détectés**
->       "fr": "chien",
->       "categorie": "animal",
->       "definition": "Un chien est un animal domestique."
+>       "fr": "chien",                                      **-> La traduction du champ "class" en français**
+>       "categorie": "animal",                              **-> Une catégorie pour aider la synthèse vocale**
+>       "definition": "Un chien est un animal domestique."  **-> La definition est une description qui est lue par le synthétiseur de voix**
 >   },
 >
 >   "person": {
@@ -76,4 +76,9 @@ Le fichier JSON structuré de la manière suivante :
 
 # Pistes d'améliorations techniques
 
-
+* Ajouter les boîtes de contourage sur les images grâce aux données de position des sommets stockées dans les prédictions.
+* Permettre la détection d'objets via la webcam de votre ordinateur.
+* Améliorer l'accessibilité de l'interface utilisateur
+* Ajouter une fonctionnalité qui enregistre un historique des analyses
+* Permettre à l'utilisateur d'exporter l'historique des analyses au format JSON
+* Ajouter une fonctionnalité de lecture/écriture sur le disque dur local afin d'envisager un stockage des historiques et des fichiers d'enrichissement sémantique.
