@@ -53,7 +53,6 @@ La variable _Predictions_ est un tableau qui contient l'ensemble des objets dét
 >       ]```
 
 
-
 # Pipeline complet
 
 ![Diagramme du Pipeline complet](./pipeline_detection_objets_tensorFlow.jpeg "Diagramme du pipeline complet de cette appli web de détection d'objets")
