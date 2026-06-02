@@ -40,7 +40,6 @@ Cette application est une petite application web <span title="qui ne s'exécute 
 # Structure des prédictions
 
 La variable _Predictions_ est un tableau qui contient l'ensemble des objets détectés :
->
 >   ```Predictions: [
 >           0:{
 >               bbox: [4 valeurs de sommet de bounding box],
@@ -59,7 +58,21 @@ La variable _Predictions_ est un tableau qui contient l'ensemble des objets dét
 
 # Gestion du fichier d'enrichissement sémantique
 
-
+Le fichier JSON structuré de la manière suivante :
+>```{
+>   "dog": {                                                **-> On retrouve le champ "class" de nos dictionnaires d'objets détectés**
+>       "fr": "chien",
+>       "categorie": "animal",
+>       "definition": "Un chien est un animal domestique."
+>   },
+>
+>   "person": {
+>       "fr": "personne",
+>       "categorie": "être humain",
+>       "definition": "Une personne est un être humain ."
+>  },
+> ...
+>}```
 
 # Pistes d'améliorations techniques
 
