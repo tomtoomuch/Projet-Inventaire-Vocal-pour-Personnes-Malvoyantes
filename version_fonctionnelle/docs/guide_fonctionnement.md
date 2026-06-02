@@ -39,8 +39,7 @@ Cette application est une petite application web <span title="qui ne s'exécute 
 
 # Structure des prédictions
 
-La variable _Predictions_ est un tableau qui contient l'ensemble des objets détectés :
->
+La variable _Predictions_ est un tableau qui contient chacun des objets détectés dans un dictionnaire :
 >
 >   ```Predictions: [
 >           0:{
