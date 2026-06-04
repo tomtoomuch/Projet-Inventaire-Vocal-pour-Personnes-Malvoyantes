@@ -1,4 +1,4 @@
-# GUIDE D'UTILISATION DE L'OUTIL DE DETECTION D'OBJETS DANS UNE IMAGE TELEVERSEE
+# GUIDE DU FONCTIONNEMENT DE L'OUTIL DE DETECTION D'OBJETS DANS UNE IMAGE TELEVERSEE
 
 > Ce guide est destiné à l'équipe IT.
 > Il explique le fonctionnement de l'application en ligne de détection d'objets dans une image téléversée.
